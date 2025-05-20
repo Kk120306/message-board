@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Board</title>
+</head>
+<body>
+    <h1>Message Board</h1>
+    <%- include('navbar', {links: links}) %>
+    <ul>
+        <% messages.forEach(message => { %>
+            <li>
+                <strong><%= message.user %></strong>: <%= message.text %><br>
+                <em><%= message.added.toLocaleString() %></em>
+            </li>
+            <button>
+                <a href="/<%= message.id %>">View Details</a>
+            </button>
+        <% }) %>
+    </ul>
+</body>
+</html>
